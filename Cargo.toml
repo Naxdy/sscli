@@ -1,0 +1,15 @@
+[package]
+name = "sscli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5.39", features = ["derive"] }
+eyre = "0.6.12"
+secret-service = { version = "5.0.0", features = ["rt-tokio-crypto-openssl"] }
+tokio = { version = "1.45.1", features = ["full"] }
+zbus = { version = "*", features = ["tokio"] }
+
+[profile.release]
+panic = "abort"
+strip = true
